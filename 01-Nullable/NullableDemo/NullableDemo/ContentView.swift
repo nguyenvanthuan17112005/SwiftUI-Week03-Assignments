@@ -1,29 +1,24 @@
-
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View{
     @State private var email: String? = nil
     @State private var inputText: String = ""
-    var body: some View {
-        VStack (spacing: 20){
+    var body: some View{
+        VStack(spacing: 20){
             Text("Nullable / Optional Demo")
                 .font(.title)
                 .bold()
-            TextField("Nhập email", text: $inputText)
+            TextField("Enter email here: ", text: $inputText)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
-            Button("Lưu email"){
+            Button("Save email"){
                 email = inputText.isEmpty ? nil : inputText
             }
             Divider()
-            Text("Email hiện tại:")
+            Text("Present Email")
                 .font(.headline)
-            Text(email ?? "Chưa có email")
-                .foregroundColor(email == nil ? .gray : .blue)
+            Text(email ?? "Not exist email")
+                .foregroundColor(email == nil ? .secondary : .primary)
         }
-        .padding()
     }
-}
-#Preview {
-    ContentView()
 }
