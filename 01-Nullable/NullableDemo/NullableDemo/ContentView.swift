@@ -11,6 +11,8 @@ struct ContentView: View{
             TextField("Enter email here: ", text: $inputText)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
             Button("Save email"){
                 email = inputText.isEmpty ? nil : inputText
             }
