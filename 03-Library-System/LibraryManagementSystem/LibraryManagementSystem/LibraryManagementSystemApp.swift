@@ -11,7 +11,7 @@ import SwiftUI
 struct LibraryManagementSystemApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LibraryManagementView()
         }
     }
 }
